@@ -14,6 +14,7 @@
 		FABB4EF21FCD4D2300599E10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB4EF01FCD4D2300599E10 /* LaunchScreen.storyboard */; };
 		FABB4EFD1FCD4D2300599E10 /* ReorderingCollectionViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4EFC1FCD4D2300599E10 /* ReorderingCollectionViewDemoTests.swift */; };
 		FABB4F081FCD4D2300599E10 /* ReorderingCollectionViewDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4F071FCD4D2300599E10 /* ReorderingCollectionViewDemoUITests.swift */; };
+		FABB4F161FCD4D7700599E10 /* ReorderingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB4F151FCD4D7700599E10 /* ReorderingCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		FABB4F031FCD4D2300599E10 /* ReorderingCollectionViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReorderingCollectionViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABB4F071FCD4D2300599E10 /* ReorderingCollectionViewDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderingCollectionViewDemoUITests.swift; sourceTree = "<group>"; };
 		FABB4F091FCD4D2300599E10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FABB4F151FCD4D7700599E10 /* ReorderingCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReorderingCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		FABB4EE61FCD4D2300599E10 /* ReorderingCollectionViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FABB4F151FCD4D7700599E10 /* ReorderingCollectionView.swift */,
 				FABB4EE71FCD4D2300599E10 /* AppDelegate.swift */,
 				FABB4EE91FCD4D2300599E10 /* ViewController.swift */,
 				FABB4EEB1FCD4D2300599E10 /* Main.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABB4F161FCD4D7700599E10 /* ReorderingCollectionView.swift in Sources */,
 				FABB4EEA1FCD4D2300599E10 /* ViewController.swift in Sources */,
 				FABB4EE81FCD4D2300599E10 /* AppDelegate.swift in Sources */,
 			);
