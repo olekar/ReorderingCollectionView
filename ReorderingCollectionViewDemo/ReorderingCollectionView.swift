@@ -20,6 +20,8 @@ public protocol ReorderingCollectionViewDataSource: class {
 
 public class ReorderingCollectionView: UICollectionView {
     
+    // MARK: public ivars
+    
     weak var reorderingDataSource: ReorderingCollectionViewDataSource?
     
     public var isCustomReordering = true
@@ -71,6 +73,7 @@ public class ReorderingCollectionView: UICollectionView {
             } as ReorderingCollectionViewAnimationDataSource
     }()
     
+    // MARK: private ivars
     
     fileprivate var interactiveCellIndexPath : IndexPath?
     
@@ -79,6 +82,7 @@ public class ReorderingCollectionView: UICollectionView {
     fileprivate var scrollingSpeed = CGPoint.zero
     fileprivate var displayLink: CADisplayLink?
     
+    // MARK: override
     
     override public var contentOffset: CGPoint {
         didSet {
@@ -198,7 +202,7 @@ public class ReorderingCollectionView: UICollectionView {
     
 }
 
-// MARK: reordering
+// MARK: - reordering
 
 extension ReorderingCollectionView {
     
@@ -210,7 +214,7 @@ extension ReorderingCollectionView {
                 return
         }
         
-        if let res = reorderingDataSource?.reorderingCollectionView(self, isEmptyItemAt: newIndexPath), res == true {
+        if let res = reorderingDataSource?.reorderingCollectionView(self, isEmptyItemAt: newIndexPath), res == true { // If over empty spot just swap items
             self.reorderingDataSource?.reorderingCollectionView(self, swapItemAt: currentIndexPath, withItemAt: newIndexPath)
             self.interactiveCellIndexPath = newIndexPath
             
@@ -235,7 +239,7 @@ extension ReorderingCollectionView {
                 }
             }
             
-            if let emptyItemIndexPath = emptyItemIndexPath {
+            if let emptyItemIndexPath = emptyItemIndexPath { // If there is empty spot from left side move cells to the left
                 if emptyItemIndexPath == currentIndexPath {
                     self.dataSource?.collectionView?(self, moveItemAt: currentIndexPath, to: newIndexPath)
                     self.interactiveCellIndexPath = newIndexPath
@@ -257,7 +261,7 @@ extension ReorderingCollectionView {
                         
                     })
                 }
-            } else {
+            } else { // otherwise move cells to the right
                 let numberOfItems = self.numberOfItems(inSection: newIndexPath.section)
                 
                 for i in (newIndexPath.item + 1)...(numberOfItems - 1) { // searching for empty spot from right side
@@ -301,7 +305,7 @@ extension ReorderingCollectionView {
     
 }
 
-// MARK: scrolling
+// MARK: - scrolling
 
 extension ReorderingCollectionView {
     
