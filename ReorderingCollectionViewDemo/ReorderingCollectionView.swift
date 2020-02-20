@@ -126,7 +126,7 @@ public class ReorderingCollectionView: UICollectionView {
         
         interactiveView = createViewForInteractiveMovement(self, indexPath)
         addSubview(interactiveView!)
-        bringSubview(toFront: interactiveView!)
+        bringSubviewToFront(interactiveView!)
         
         beginInteractiveMovementAnimation(self, indexPath, interactiveView!, nil)
         
@@ -352,7 +352,7 @@ extension ReorderingCollectionView {
             displayLink = nil
         } else if displayLink == nil {
             displayLink = CADisplayLink(target: self, selector: #selector(onDisplayLink(_:)))
-            displayLink?.add(to: RunLoop.main, forMode: .commonModes)
+            displayLink?.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         }
     }
     

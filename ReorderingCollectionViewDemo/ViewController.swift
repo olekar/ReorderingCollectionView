@@ -12,7 +12,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: ReorderingCollectionView!
     
-    fileprivate var dataArray = [1, 2, nil, nil, 3, 4, nil, 5, nil, 6, nil, 7, 8, 9, 10, nil, nil, nil, 11, nil, nil]
+    fileprivate var dataArray: [Int?] = {
+//        return [1, 2, nil, nil, 3, 4, nil, 5, nil, 6, nil, 7, 8, 9, 10, nil, nil, nil, 11, nil, nil]
+        
+        let numberOfItems = 50
+        var res = [Int?]()
+        for i in 1...numberOfItems {
+            Bool.random() ? res.append(i) : res.append(nil)
+        }
+        return res
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +64,7 @@ class ViewController: UIViewController {
             }
         }
         
-        logStr.remove(at: logStr.index(logStr.startIndex, offsetBy: logStr.characters.count - 1))
+        logStr.remove(at: logStr.index(logStr.startIndex, offsetBy: logStr.count - 1))
         logStr += "]"
         
         print(logStr)
